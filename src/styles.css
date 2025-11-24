@@ -1,0 +1,82 @@
+*{box-sizing:border-box;font-family:Inter,Arial,Helvetica,sans-serif}
+body,html,#root{height:100%;margin:0}
+
+.app header{
+  background:#111;
+  color:#fff;
+  padding:10px;
+}
+
+.app main{
+  display:grid;
+  grid-template-columns:220px 1fr 420px;
+  gap:12px;
+  padding:12px;
+  height:calc(100vh - 70px);
+}
+
+.sidebar{
+  background:#f7f7f7;
+  padding:10px;
+  border-radius:6px;
+}
+
+.sidebar button{
+  display:block;
+  margin:6px 0;
+  padding:6px 8px;
+}
+
+/* 2D planner container */
+.canvas-area{
+  background:#fff;
+  padding:10px;
+  border-radius:6px;
+  display:flex;          /* let inner canvas stretch */
+}
+
+/* inner Konva container */
+.canvas-wrap{
+  border:1px solid #ddd;
+  flex:1;
+  height:100%;
+  min-height:320px;
+  overflow:hidden;       /* no scrollbars inside, we scale to fit */
+  touch-action:none;
+}
+
+/* 3D area + canvas */
+.three-area{
+  background:#fff;
+  padding:10px;
+  border-radius:6px;
+  display:flex;
+}
+
+.three-canvas{
+  flex:1;
+  min-height:520px;
+}
+
+@media (max-width:900px){
+  .app main{
+    display:block;
+    height:auto;
+    padding:8px;
+  }
+
+  .sidebar,
+  .canvas-area,
+  .three-area{
+    margin-bottom:12px;
+  }
+
+  .sidebar button{
+    width:100%;
+    padding:10px 12px;
+  }
+
+  .three-canvas{
+    min-height:320px;
+  }
+}
